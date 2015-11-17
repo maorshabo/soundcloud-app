@@ -1,0 +1,47 @@
+.searchBar {
+
+  .search-form-control {
+    .input-group-addon {
+      background: white !important;
+      padding: 6px 6px;
+    }
+
+    .form-control {
+      border-left: 0;
+      box-shadow: 0 0 0;
+      border-color: #ccc;
+      padding: 6px 2px;
+    }
+
+    button {
+      border: 0;
+      background: transparent;
+    }
+  }
+}
+.searchResults {
+  position: relative;
+
+  ul {
+    .tile {
+      width:auto;
+      margin:3px 10%;
+      float:left;
+      background:#FFF;
+      text-align:center;
+      cursor:pointer;
+
+      &:hover {
+        img {
+          background: #f5f5f5;
+        }
+      }
+      img {
+        padding:5px;
+        border:#eee 1px solid;
+        max-width:90%;
+        height:98px;
+      }
+    }
+  }
+}

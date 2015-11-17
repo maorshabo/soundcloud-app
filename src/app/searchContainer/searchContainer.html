@@ -1,0 +1,26 @@
+<div class="searchBar">
+  <form ng-submit="vm.search()">
+    <div class="input-group search-form-control">
+      <span class="input-group-addon">
+                        <button type="submit">
+                          <span class="glyphicon glyphicon-search"></span>
+                        </button>
+                        <i class="fa fa-spinner fa-spin" ng-show="vm.isLoading"></i>
+                    </span>
+      <input type="text" class="form-control" placeholder="Search" ng-model="vm.searchQuery">
+    </div>
+  </form>
+</div>
+<div class="searchResults">
+  <ul class="list-unstyled list-group clearfix">
+    <li ng-repeat="track in vm.searchResults" ng-click="vm.selectResult(track)" ng-if="vm.viewMode == 'list'" ng-class="{'list' : vm.viewMode == 'list'}"><a href="#/" class="list-group-item">{{ track.title }}</a></li>
+    <li ng-repeat="track in vm.searchResults" ng-click="vm.selectResult(track)" ng-if="vm.viewMode == 'tiles'" ng-class="{'tile' : vm.viewMode == 'tiles'}"><img ng-src="{{ track.artwork_url }}" /></li>
+  </ul>
+</div>
+<div class="searchControls clearfix">
+  <button class="btn btn-default pull-left" ng-click="vm.next()"><span class="glyphicon glyphicon-arrow-right"></span></button>
+  <div class="pull-right">
+    <button class="btn btn-default" ng-class="{'active' : vm.viewMode == 'list'}" ng-click="vm.setViewMode('list')"><i class="fa fa-list"></i></button>
+    <button class="btn btn-default" ng-class="{'active' : vm.viewMode == 'tiles'}" ng-click="vm.setViewMode('tiles')"><i class="fa fa-th"></i></button>
+  </div>
+</div>
