@@ -23,14 +23,14 @@
               embedElm.removeClass('fadeOut');
               ctrl.isPlaying = true;
               embedElm.html(embedObject.html).css('height',embedObject.height);
-              imageContainer.addClass('fadeOut');
+              imageContainer.addClass('fadeOut').css('z-index',-1);
             });
           });
         };
 
         ctrl.showImage = function() {
           embedElm.addClass('fadeOut');
-          imageContainer.show().removeClass('fadeOut');
+          imageContainer.show().removeClass('fadeOut').css('z-index',1);
         }
       },
       controller: function($scope) {
